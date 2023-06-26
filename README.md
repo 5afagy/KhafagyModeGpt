@@ -48,4 +48,4 @@ Once you have KhafagyMode installed:
 If you would like to contribute to KhafagyMode, feel free to fork the repository, make your changes, and submit a pull request. Contributions are always welcome!
 
 ## License
-KhafagyMode is released under the [MIT License](LICENSE).
+KhafagyMode is released under the [MIT License](LICENSE.txt).
