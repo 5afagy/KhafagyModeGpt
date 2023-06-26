@@ -68,9 +68,9 @@ def confirm_access_token(token_file=None, silence=False, api=False):
         return access_token, True
 
     if app_token_file_exists:
-        confirm = 'y' if silence else Prompt.ask('A saved access token has been detected. Do you want to use it?',
-                                                 choices=['y', 'n', 'del'], default='y')
-        if 'y' == confirm:
+        #confirm = 'y' if silence else Prompt.ask('A saved access token has been detected. Do you want to use it?',
+                   #                              choices=['y', 'n', 'del'], default='y')
+        if 'y' == 'y':
             access_token = read_access_token(app_token_file)
             if not check_access_token_out(access_token, api):
                 os.remove(app_token_file)
@@ -112,11 +112,12 @@ def main():
 
     Console.debug_b(
         '''
-            ChatGPT Khafagy Mode On (^_^)
-            My Blog: https:5afagy.github.io
-            Contact: Ali5afagy@gmail.com
-            Version: {}'''.format(__version__), end=''
-    )
+                                 ChatGPT Khafagy Mode V3 (^_^)
+                            My Blog: https://5afagy.github.io
+                            Github: https://github.com/5afagy/KhafagyModeGpt
+                            Contact: Ali5afagy@gmail.com
+                                ==>> Powered by Pandora 2023 <<==
+''')
 
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -180,8 +181,8 @@ def main():
     args, _ = parser.parse_known_args()
     __show_verbose = args.verbose
 
-    Console.debug_b(''', Mode: {}, Engine: {}
-        '''.format('server' if args.server else 'cli', 'turbo' if args.api else 'free'))
+   # Console.debug_b(''', Mode: {}, Engine: {}
+    #    '''.format('server' if args.server else 'cli', 'turbo' if args.api else 'free'))
 
     if args.sentry:
         sentry.init(args.proxy)
