@@ -35,7 +35,8 @@ Once you have KhafagyMode installed:
     ```
 
 2. Enter your account to access ChatGPT Plus features via the terminal.
-
+   
+![Login](https://github.com/5afagy/KhafagyModeGpt/blob/main/openai/Screenshot%20from%202023-06-26%2018-13-54.png)
     
 
 ## Note
