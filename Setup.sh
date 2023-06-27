@@ -1,13 +1,21 @@
 #!/bin/bash
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-DEST_BIN_DIR="$HOME/.local/bin"
-DEST_PKG_DIR="$HOME/.local/lib/python3.11/site-packages"
+DEST_BIN_DIR="/usr/local/bin"
+DEST_PKG_DIR=""
 
-if [ "$EUID" -eq 0 ]; then
-    USER_HOME=$(eval echo ~$SUDO_USER)
-    DEST_BIN_DIR="$USER_HOME/.local/bin"
-    DEST_PKG_DIR="$USER_HOME/.local/lib/python3.11/site-packages"
+# Check Python versions and set the destination package directory accordingly
+if command -v python3.11 &> /dev/null; then
+    DEST_PKG_DIR="/usr/local/lib/python3.11/dist-packages"
+elif command -v python3.10 &> /dev/null; then
+    DEST_PKG_DIR="/usr/local/lib/python3.10/dist-packages"
+elif command -v python3.9 &> /dev/null; then
+    DEST_PKG_DIR="/usr/local/lib/python3.9/dist-packages"
+elif command -v python2.7 &> /dev/null; then
+    DEST_PKG_DIR="/usr/local/lib/python2.7/dist-packages"
+else
+    echo "Error: Python 3.11, 3.10, 3.9, or Python 2.7 is required."
+    exit 1
 fi
 
 mkdir -p "$DEST_BIN_DIR"  # Create the destination bin directory if it doesn't exist
