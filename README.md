@@ -15,17 +15,17 @@ To install KhafagyMode, follow these steps:
 
 1. Open your terminal or CLI.
 2. Navigate to your desired installation directory by running the following command:
+
    ```bash
     
     cd && git clone https://github.com/5afagy/KhafagyModeGpt.git
-    ```
-    ```bash
+
     cd KhafagyModeGpt
-    ````
-    ```bash
+
     bash setup.sh
-    
-    ```
+   
+   ```
+   
 ## Usage
 Once you have KhafagyMode installed:
 
